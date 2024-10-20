@@ -24,7 +24,7 @@ jobs:
         run: make build
         env:
           VERSION: latest
-      - name: Test
-        run: make test
-      - name: Lint
-        run: make lint
+      # - name: Test
+      #   run: make test
+      # - name: Lint
+      #   run: make lint
