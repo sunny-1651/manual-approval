@@ -149,6 +149,10 @@ func main() {
 		os.Exit(1)
 	}
 
+	repoowner := os.Getenv("repo-owner")
+	reponame := os.Getenv("repo-name")
+	fmt.Printf("repo owner: %s, name: %s", repoowner, reponame)
+
 	repoFullName := os.Getenv(envVarRepoFullName)
 	runID, err := strconv.Atoi(os.Getenv(envVarRunID))
 	if err != nil {
