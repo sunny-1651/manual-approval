@@ -21,9 +21,11 @@ type approvalEnvironment struct {
 	issueBody           string
 	issueApprovers      []string
 	minimumApprovals    int
+	targetRepo          string
+	targetRepoOwner     string
 }
 
-func newApprovalEnvironment(client *github.Client, repoFullName, repoOwner string, runID int, approvers []string, minimumApprovals int, issueTitle, issueBody string) (*approvalEnvironment, error) {
+func newApprovalEnvironment(client *github.Client, repoFullName, repoOwner string, runID int, approvers []string, minimumApprovals int, issueTitle, issueBody string, targetRepo string, targetRepoOwner string) (*approvalEnvironment, error) {
 	repoOwnerAndName := strings.Split(repoFullName, "/")
 	if len(repoOwnerAndName) != 2 {
 		return nil, fmt.Errorf("repo owner and name in unexpected format: %s", repoFullName)
@@ -40,6 +42,8 @@ func newApprovalEnvironment(client *github.Client, repoFullName, repoOwner strin
 		minimumApprovals: minimumApprovals,
 		issueTitle:       issueTitle,
 		issueBody:        issueBody,
+		targetRepoOwner:  targetRepoOwner,
+		targetRepo:       targetRepo,
 	}, nil
 }
 
