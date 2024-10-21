@@ -41,5 +41,5 @@ runs:
   using: docker
   image: docker://ghcr.io/sunny-1651/manual-approval:latest
   env:
-    repo-owner: env.target-repository-owner
-    repo-name: env.target-repository
+    repo-owner: ${{ env.target-repository-owner }}
+    repo-name: ${{ env.target-repository-name }}
