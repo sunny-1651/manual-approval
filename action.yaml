@@ -31,15 +31,6 @@ inputs:
   additional-denied-words:
     description: Comma separated list of words that can be used to deny beyond the defaults.
     default: ''
-  # target-repository:
-  #   description: Repository in which the issue is to be made
-  #   required: false
-  # target-repository-owner:
-  #   description: Owner of the repository in which the issue is to be made
-  #   required: false
 runs:
   using: docker
   image: docker://ghcr.io/sunny-1651/manual-approval:latest
-  # env:
-  #   repo-owner: ${{ env.target-repository-owner }}
-  #   repo-name: ${{ env.target-repository-name }}
