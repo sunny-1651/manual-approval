@@ -151,6 +151,7 @@ func main() {
 
 	repoowner := os.Getenv("repo-owner")
 	reponame := os.Getenv("repo-name")
+	fmt.Printf("repo owner: %s, name: %s \n", envVarTargetRepo, envVarTargetRepoOwner)
 	fmt.Printf("repo owner: %s, name: %s \n", repoowner, reponame)
 
 	repoFullName := os.Getenv(envVarRepoFullName)
@@ -185,7 +186,7 @@ func main() {
 			os.Exit(1)
 		}
 	}
-	apprv, err := newApprovalEnvironment(client, repoFullName, repoOwner, runID, approvers, minimumApprovals, issueTitle, issueBody)
+	apprv, err := newApprovalEnvironment(client, repoFullName, repoOwner, runID, approvers, minimumApprovals, issueTitle, issueBody, envVarTargetRepo, envVarTargetRepoOwner)
 	if err != nil {
 		fmt.Printf("error creating approval environment: %v\n", err)
 		os.Exit(1)
