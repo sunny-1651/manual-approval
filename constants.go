@@ -21,8 +21,8 @@ const (
 	envVarExcludeWorkflowInitiatorAsApprover string = "INPUT_EXCLUDE-WORKFLOW-INITIATOR-AS-APPROVER"
 	envVarAdditionalApprovedWords            string = "INPUT_ADDITIONAL-APPROVED-WORDS"
 	envVarAdditionalDeniedWords              string = "INPUT_ADDITIONAL-DENIED-WORDS"
-	envVarTargetRepo                         string = "INPUT_TARGET-REPOSITORY"
-	envVarTargetRepoOwner                    string = "INPUT_TARGET-REPOSITORY-OWNER"
+	// envVarTargetRepo                         string = "INPUT_TARGET-REPOSITORY"
+	// envVarTargetRepoOwner                    string = "INPUT_TARGET-REPOSITORY-OWNER"
 )
 
 var (
