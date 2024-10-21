@@ -6,6 +6,7 @@ import (
 	"os"
 	"os/signal"
 	"strconv"
+	"strings"
 	"time"
 
 	"github.com/google/go-github/v43/github"
@@ -151,7 +152,6 @@ func main() {
 
 	targetRepoOwner := os.Getenv("target-repository-owner")
 	targetRepoName := os.Getenv("target-repository")
-	fmt.Printf("repo owner: %s, name: %s \n", targetRepoOwner, targetRepoName) // debug message
 
 	repoFullName := os.Getenv(envVarRepoFullName)
 	runID, err := strconv.Atoi(os.Getenv(envVarRunID))
@@ -160,6 +160,13 @@ func main() {
 		os.Exit(1)
 	}
 	repoOwner := os.Getenv(envVarRepoOwner)
+
+	if targetRepoName == "" || targetRepoOwner == "" {
+		parts := strings.SplitN(repoFullName, "/", 2)
+		targetRepoOwner = parts[0]
+		targetRepoName = parts[1]
+	}
+	fmt.Printf("repo owner: %s, name: %s \n", targetRepoOwner, targetRepoName) // debug message
 
 	ctx := context.Background()
 	client, err := newGithubClient(ctx)
