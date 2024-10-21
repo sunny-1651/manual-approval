@@ -150,7 +150,7 @@ func main() {
 	}
 
 	targetRepoOwner := os.Getenv("target-repository-owner")
-	targetRepoName := os.Getenv("target-repository-name")
+	targetRepoName := os.Getenv("target-repository")
 	fmt.Printf("repo owner: %s, name: %s \n", targetRepoOwner, targetRepoName)
 
 	repoFullName := os.Getenv(envVarRepoFullName)
