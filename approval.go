@@ -21,7 +21,7 @@ type approvalEnvironment struct {
 	issueBody           string
 	issueApprovers      []string
 	minimumApprovals    int
-	targetRepo          string
+	targetRepoName      string
 	targetRepoOwner     string
 }
 
@@ -43,7 +43,7 @@ func newApprovalEnvironment(client *github.Client, repoFullName, repoOwner strin
 		issueTitle:       issueTitle,
 		issueBody:        issueBody,
 		targetRepoOwner:  targetRepoOwner,
-		targetRepo:       targetRepo,
+		targetRepoName:   targetRepo,
 	}, nil
 }
 
