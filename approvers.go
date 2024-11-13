@@ -10,7 +10,7 @@ import (
 	"github.com/google/go-github/v43/github"
 )
 
-func retrieveApprovers(client *github.Client, repoOwner string) ([]string, error) {
+func retrieveAprovers(client *github.Client, repoOwner string) ([]string, error) {
 	workflowInitiator := os.Getenv(envVarWorkflowInitiator)
 	shouldExcludeWorkflowInitiatorRaw := os.Getenv(envVarExcludeWorkflowInitiatorAsApprover)
 	shouldExcludeWorkflowInitiator, parseBoolErr := strconv.ParseBool(shouldExcludeWorkflowInitiatorRaw)
