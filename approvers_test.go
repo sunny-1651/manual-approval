@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestDeduplicateUsers(t *testing.T) {
+func TestDeduplicatesers(t *testing.T) {
 	testCases := []struct {
 		name     string
 		input    []string
