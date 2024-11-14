@@ -1,9 +1,8 @@
 package main
 
 import (
-	"testing"
-
 	"github.com/google/go-github/v43/github"
+	"testing"
 )
 
 func TestApprovalFromComments(t *testing.T) {
