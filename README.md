@@ -1,5 +1,7 @@
 # Manual Workflow Approval
 
+## This branch is for my personal use of the feature I added, creating approvals in a different repo than were the workflow is run.
+
 [![ci](https://github.com/trstringer/manual-approval/actions/workflows/ci.yaml/badge.svg)](https://github.com/trstringer/manual-approval/actions/workflows/ci.yaml)
 
 Pause a GitHub Actions workflow and require manual approval from one or more approvers before continuing.
