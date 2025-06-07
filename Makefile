@@ -1,5 +1,6 @@
 IMAGE_REPO=ghcr.io/snskarora/manual-approval
-TARGET_PLATFORM?=linux/amd64
+TARGET_PLATFORM=linux/amd64,linux/arm64,linux/arm/v8
+VERSION=0.0.2
 
 .PHONY: tidy
 tidy:
@@ -11,7 +12,9 @@ build:
 		echo "VERSION is required"; \
 		exit 1; \
 	fi
-	docker build --platform $(TARGET_PLATFORM) -t $(IMAGE_REPO):$$VERSION .
+	docker buildx create --use --name mybuilder
+	docker buildx build --push --platform $(TARGET_PLATFORM) -t $(IMAGE_REPO):$(VERSION) .
+	docker buildx rm mybuilder
 
 .PHONY: push
 push:
